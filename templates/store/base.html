@@ -1,0 +1,180 @@
+<!--<!doctype html>
+<html lang="en">
+-->
+{% extends "basic.html" %}
+{% load static %}
+{% block head %}
+<head>
+
+<!-- ====== Boxicons ====== -->
+<link
+  href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+  rel="stylesheet"
+/>
+<!-- ====== Swiper CSS ====== -->
+<!--<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper/swiper-bundle.min.css"
+/>-->
+<!-- ====== Custom CSS ====== -->
+<!--<link rel="stylesheet" href="{% static 'ecommerce/ind/css/styles.css' %}">-->
+<title>Medicine</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>E-commerce Website</title>
+
+  <style>
+    nav{
+      background-color: green;
+    }
+    .one-edge-shadow {
+              box-shadow: 0 8px 2px -5px rgb(246, 245, 245);
+}
+.display-8{
+  font-weight: 200;
+  font-size: 30px;
+  font-colour: $teal-200;
+}
+  </style>
+</head>
+{% endblock %}
+
+
+{% block body %}
+<body>
+  <!-- navbar -->
+
+<nav class="one-edge-shadow
+  navbar navbar-light
+  sticky-top navbar 
+  navbar-expand-lg
+  text-white">
+    <a class="navbar-brand ms-3 text-dark " href="/">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <img src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-svg-png-icon-download-28.png" style="width:50px;height:50px,color:text-light;">E-Commerce</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/store">Store <span class="sr-only">(current)</span></a>
+        </li>
+
+          </ul>
+
+
+
+
+      <ul class=" navbar-nav my-2 my-lg-0">
+
+        <li class="nav-item active">
+          <a class="nav-link" href="/cart">Cart 
+            <span class="badge badge-success">{{request.session.cart.keys|length}}</span>
+            <span class="sr-only">(current)</span></a>
+        </li>
+
+        {% if request.session.customer %}
+        
+        <li class="nav-item active ">
+          <a class="nav-link" href="/orders">Orders<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active ">
+          <a class="nav-link" href="/logout">Logout<span class="sr-only">(current)</span></a>
+        </li>
+        {% else %}
+       
+        <li class="nav-item active">
+          <a class="nav-link" href="/signup">Signup<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/login">Login<span class="sr-only">(current)</span></a>
+        </li>
+        {% endif %}
+
+
+      </ul>
+
+
+    </div>
+  </nav>
+  <!---->
+  {% block content %}{% endblock %}
+  <!--<header class="header">
+  <div class="hero">
+    <div class="row container d-flex">
+      <div class="col">
+        <span class="subtitle">Medicine at affordable Price</span>
+        <h1>MEDIC<span class="i">i</span>Ne</h1>
+        <p>UPLOAD PRECRIPTION AND ORDER YOUR MEDICINE NOW</p>
+
+        <button class="btn">Explore Now!</button>
+      </div>
+      <img src="{% static 'ecommerce/ind/images/woman-in-cart.png'%}" alt="" />
+    </div>
+  </div>
+</header> -->
+
+<!--<section class="section statistics">
+  <div class="title">
+    <span>STATS</span>
+    <h2>Our Statistics</h2>
+  </div>
+
+  <div class="row container">
+    <div class="col">
+      <div class="icon">
+        <i class="bx bxs-check-square"></i>
+      </div>
+      <h3>Easy Order System</h3>
+      <p>Lorem Ispum is a placeholder text commomly used as a free text.</p>
+    </div>
+    <div class="col">
+      <div class="icon">
+        <i class="bx bxs-user"></i>
+      </div>
+      <h3>On Time Delievery</h3>
+      <p>Lorem Ispum is a placeholder text commomly used as a free text.</p>
+    </div>
+    <div class="col">
+      <div class="icon">
+        <i class="bx bxs-dollar-circle"></i>
+      </div>
+      <h3>Money Back Gaurantee</h3>
+      <p>Lorem Ispum is a placeholder text commomly used as a free text.</p>
+    </div>
+    <div class="col">
+      <div class="icon">
+        <i class="bx bxs-user"></i>
+      </div>
+      <h3>24/7 Customer Support</h3>
+      <p>Lorem Ispum is a placeholder text commomly used as a free text.</p>
+    </div>
+  </div>
+</section>-->
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS 
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  -->
+</body>
+{% endblock %}
